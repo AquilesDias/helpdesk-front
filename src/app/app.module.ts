@@ -21,7 +21,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component'; 
+import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
+import { LoginComponent } from './components/login/login.component'; 
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-
     NavbarComponent,
     HomeComponent,
     HeaderComponent,
-    TecnicoListComponent
+    TecnicoListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
