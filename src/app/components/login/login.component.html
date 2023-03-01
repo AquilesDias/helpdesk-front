@@ -32,6 +32,7 @@
           </mat-form-field>
 
           <button
+            (click)="login()"
             [disabled]="!validationFields()"
             class="button-login"
             mat-raised-button >Login</button>

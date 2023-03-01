@@ -1,6 +1,7 @@
 import { Credenciais } from './../../models/credenciais';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +21,14 @@ export class LoginComponent implements OnInit {
 
   hide = true;
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  login(){
+    this.toastr.error('Dados invalidos', 'Login');
+    this.credenciais.password = '';
   }
 
   validationFields(): boolean {
