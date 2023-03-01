@@ -1,0 +1,31 @@
+.container {
+    height: 100%;
+    background-color: rgb(169, 9, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 30rem;
+    margin: auto;
+    padding: 5rem 2rem;
+    background-color: white;
+    border-radius: 7%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+.button-login {
+    
+    width: 100%;
+    color: white;
+    background-color: rgb(124, 16, 191); 
+}

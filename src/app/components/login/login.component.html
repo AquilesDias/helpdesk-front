@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div class="container">
+    <form class="form">
+
+        <h1>LOGIN</h1>
+
+        <mat-form-field class="full-width" appearance="fill">
+
+            <mat-label>E-mail</mat-label>
+            <input 
+                [formControl]="email"
+                [(ngModel)]="credenciais.email"
+                name="email"
+                required
+                matInput>
+        
+          </mat-form-field>
+        
+          <mat-form-field class="full-width" appearance="fill">
+        
+            <mat-label>Senha</mat-label>
+            <input
+                [formControl]="password"
+                [(ngModel)]="credenciais.password"
+                name="password"
+                required 
+                matInput 
+                [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        
+          </mat-form-field>
+
+          <button
+            [disabled]="!validationFields()"
+            class="button-login"
+            mat-raised-button >Login</button>
+    </form>
+
+</div>
+  
+  
