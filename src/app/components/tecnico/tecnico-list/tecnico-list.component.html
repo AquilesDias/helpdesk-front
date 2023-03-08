@@ -1,5 +1,18 @@
-<div class="div container">
+<div class="container">
+
+  <h1>Lista de Técnicos</h1>
+
+  <button mat-raised-button style="background-color: blueviolet; color: white;">
+    <i class="material-icons" style="color: white;">add_circle</i>
+    Adicionar Técnico</button><br>
+
+  <mat-form-field  style="width: 50%;">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Joao" #input>
+  </mat-form-field>
+
     <div class="mat-elevation-z8">
+
         <table mat-table [dataSource]="dataSource">
       
           
@@ -38,9 +51,8 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
       
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                       showFirstLastButtons
-                       aria-label="Select page of periodic elements">
+        <mat-paginator [pageSizeOptions]="[2,5, 10, 20]"
+                       showFirstLastButtons>
         </mat-paginator>
       </div>
 </div>
