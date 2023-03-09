@@ -29,7 +29,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
-
+import { MatCheckboxModule } from '@angular/material/checkbox'; 
 
 @NgModule({
   declarations: [
@@ -60,6 +60,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     MatTableModule,
     MatToolbarModule,
     FormsModule,
+    MatCheckboxModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 5000,

@@ -1,1 +1,59 @@
-<p>tecnico-create works!</p>
+<div class="container mat-elevation-z8">
+    
+    <form class="form">
+        <h1>Cadastre um técnico.</h1>
+
+            <section class="example-section">
+                <mat-checkbox class="example-margin">ADMIN</mat-checkbox>
+                <mat-checkbox class="example-margin">CLIENTE</mat-checkbox>
+                <mat-checkbox class="example-margin">TÉCNICO</mat-checkbox>
+            </section>
+
+
+
+        <div class="inputs">
+
+        
+            <mat-form-field class="full-width">
+                <mat-label>Nome</mat-label>
+                <input type="text" matInput placeholder="Ex. Jonas">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Ex. Jonas@gmail.com">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <mat-label>CPF</mat-label>
+                <input type="text" matInput>
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <mat-label>Senha</mat-label>
+                <input type="password"
+                     matInput
+                     [type]="hide ? 'password' : 'text'"
+                     placeholder="Ex. Jonas@gmail.com">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+            </mat-form-field>    
+              
+        </div>
+
+        <div class="buttons">
+
+            <button
+            class="button-cadastro"
+            mat-raised-button >Cadastrar</button>
+            
+            <button
+            class="button-cancelar"
+            color="warn"
+            routerLink="/tecnico-list"
+            mat-raised-button >Cancelar</button>
+
+        </div>
+    </form>
+</div>
