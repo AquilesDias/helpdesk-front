@@ -5,6 +5,10 @@
     border-radius: 8px;
 }
 
+/* form > mat-form-field {
+    background: rgb(205, 90, 195);
+} */
+
 .example-section {
     width: 100%;
     display: flex;

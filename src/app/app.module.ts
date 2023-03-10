@@ -30,6 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { MatCheckboxModule } from '@angular/material/checkbox'; 
+import { NgxMaskModule }  from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatTableModule,
     MatToolbarModule,
     FormsModule,
+    NgxMaskModule.forRoot(),
     MatCheckboxModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({

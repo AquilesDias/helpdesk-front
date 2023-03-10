@@ -16,23 +16,33 @@
         
             <mat-form-field class="full-width">
                 <mat-label>Nome</mat-label>
-                <input type="text" matInput placeholder="Ex. Jonas">
+                <input type="text" 
+                  [formControl]="nome"
+                  matInput 
+                  placeholder="Ex. Jonas">
             </mat-form-field>
             
             <mat-form-field class="full-width">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput placeholder="Ex. Jonas@gmail.com">
+                <input type="email" 
+                    [formControl]="email"
+                    matInput
+                    placeholder="Ex. Jonas@gmail.com">
             </mat-form-field>
             
             <mat-form-field class="full-width">
                 <mat-label>CPF</mat-label>
-                <input type="text" matInput>
+                <input type="text"
+                  [formControl]="cpf"
+                  mask="000.000.000-00"
+                  matInput>
             </mat-form-field>
             
             <mat-form-field class="full-width">
                 <mat-label>Senha</mat-label>
-                <input type="password"
+                <input name="senha"
                      matInput
+                     
                      [type]="hide ? 'password' : 'text'"
                      placeholder="Ex. Jonas@gmail.com">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -46,7 +56,9 @@
 
             <button
             class="button-cadastro"
-            mat-raised-button >Cadastrar</button>
+            mat-raised-button 
+            [disabled]="!validationFields()"
+            >Cadastrar</button>
             
             <button
             class="button-cancelar"
