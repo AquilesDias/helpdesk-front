@@ -26,7 +26,7 @@ export class TecnicoListComponent implements OnInit {
   }
 
   findAllTecnico(){
-    this.tecnicoService.findAllClientes().subscribe(resp => {
+    this.tecnicoService.findAllTecnicos().subscribe(resp => {
       this.ELEMENT_DATA = resp;
       this.dataSource = new MatTableDataSource<Tecnico>(resp);
       this.dataSource.paginator = this.paginator;

@@ -12,7 +12,7 @@ export class TecnicoService {
   
   constructor(private http: HttpClient) { }
 
-  findAllClientes():Observable<Tecnico[]>{
+  findAllTecnicos():Observable<Tecnico[]>{
     return this.http.get<Tecnico[]>(`${API_CONFIG.baseUrl}/tecnico`);
   }
   
