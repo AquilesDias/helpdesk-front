@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
+import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
       {
         path: "tecnico-create",
         component:TecnicoCreateComponent
+      },
+      {
+        path: "tecnico-update",
+        component:TecnicoUpdateComponent
       }
     ]
   }
