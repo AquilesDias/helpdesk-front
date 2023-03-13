@@ -15,5 +15,9 @@ export class TecnicoService {
   findAllTecnicos():Observable<Tecnico[]>{
     return this.http.get<Tecnico[]>(`${API_CONFIG.baseUrl}/tecnico`);
   }
+
+  saveTecnico(tecnico:Tecnico):Observable<Tecnico>{
+    return this.http.post<Tecnico>(`${API_CONFIG.baseUrl}/tecnico`, tecnico);
+  }
   
 }

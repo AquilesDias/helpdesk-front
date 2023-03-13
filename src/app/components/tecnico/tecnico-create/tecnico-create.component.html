@@ -4,9 +4,9 @@
         <h1>Cadastre um técnico.</h1>
 
             <section class="example-section">
-                <mat-checkbox class="example-margin">ADMIN</mat-checkbox>
-                <mat-checkbox class="example-margin">CLIENTE</mat-checkbox>
-                <mat-checkbox class="example-margin">TÉCNICO</mat-checkbox>
+                <mat-checkbox (click)="addPerfil(0)" class="example-margin">ADMIN</mat-checkbox>
+                <mat-checkbox (click)="addPerfil(1)" class="example-margin">CLIENTE</mat-checkbox>
+                <mat-checkbox (click)="addPerfil(2)" class="example-margin">TÉCNICO</mat-checkbox>
             </section>
 
 
@@ -17,6 +17,8 @@
             <mat-form-field class="full-width">
                 <mat-label>Nome</mat-label>
                 <input type="text" 
+                  [(ngModel)]="tecnico.nome"  
+                  name="nome"
                   [formControl]="nome"
                   matInput 
                   placeholder="Ex. Jonas">
@@ -25,6 +27,8 @@
             <mat-form-field class="full-width">
                 <mat-label>Email</mat-label>
                 <input type="email" 
+                    [(ngModel)]="tecnico.email"
+                    name="email"
                     [formControl]="email"
                     matInput
                     placeholder="Ex. Jonas@gmail.com">
@@ -33,6 +37,8 @@
             <mat-form-field class="full-width">
                 <mat-label>CPF</mat-label>
                 <input type="text"
+                  [(ngModel)]="tecnico.cpf"
+                  name="cpf"
                   [formControl]="cpf"
                   mask="000.000.000-00"
                   matInput>
@@ -42,7 +48,8 @@
                 <mat-label>Senha</mat-label>
                 <input name="senha"
                      matInput
-                     
+                     [(ngModel)]="tecnico.senha"
+                     [formControl]="senha"
                      [type]="hide ? 'password' : 'text'"
                      placeholder="Ex. Jonas@gmail.com">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -57,6 +64,7 @@
             <button
             class="button-cadastro"
             mat-raised-button 
+            (click)="saveTecnico()"
             [disabled]="!validationFields()"
             >Cadastrar</button>
             
