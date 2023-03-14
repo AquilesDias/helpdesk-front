@@ -12,12 +12,20 @@ export class TecnicoService {
   
   constructor(private http: HttpClient) { }
 
+  findById(id: any):Observable<Tecnico>{
+    return this.http.get<Tecnico>(`${API_CONFIG.baseUrl}/tecnico/${id}`);
+  }
+
   findAllTecnicos():Observable<Tecnico[]>{
     return this.http.get<Tecnico[]>(`${API_CONFIG.baseUrl}/tecnico`);
   }
 
   saveTecnico(tecnico:Tecnico):Observable<Tecnico>{
     return this.http.post<Tecnico>(`${API_CONFIG.baseUrl}/tecnico`, tecnico);
+  }
+
+  update(tecnico:Tecnico):Observable<Tecnico>{
+    return this.http.put<Tecnico>(`${API_CONFIG.baseUrl}/tecnico/${tecnico.id}`, tecnico);
   }
   
 }

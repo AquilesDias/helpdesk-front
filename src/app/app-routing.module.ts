@@ -32,7 +32,7 @@ const routes: Routes = [
         component:TecnicoCreateComponent
       },
       {
-        path: "tecnico-update",
+        path: "tecnico-update/:id",
         component:TecnicoUpdateComponent
       }
     ]
