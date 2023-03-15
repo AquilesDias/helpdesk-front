@@ -48,6 +48,7 @@
                 <mat-label>Senha</mat-label>
                 <input name="senha"
                      matInput
+                     [(ngModel)]="tecnico.senha"
                      [formControl]="senha"
                      [type]="hide ? 'password' : 'text'"
                      placeholder="Ex. Jonas@gmail.com">
