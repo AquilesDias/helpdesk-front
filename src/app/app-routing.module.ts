@@ -7,6 +7,7 @@ import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
+import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path: "tecnico-update/:id",
         component:TecnicoUpdateComponent
+      },
+      {
+        path: "tecnico-delete/:id",
+        component:TecnicoDeleteComponent
       }
     ]
   }
