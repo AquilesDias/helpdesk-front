@@ -1,1 +1,79 @@
-<p>tecnico-delete works!</p>
+<div class="container mat-elevation-z8">
+    
+    <form class="form">
+        <h1>Deletando técnico: {{ tecnico.nome }} </h1>
+
+            <section class="example-section">
+                <mat-checkbox [disabled]="true" class="example-margin">ADMIN</mat-checkbox>
+                <mat-checkbox [disabled]="true" class="example-margin">CLIENTE</mat-checkbox>
+                <mat-checkbox [disabled]="true" class="example-margin">TÉCNICO</mat-checkbox>
+            </section>
+
+
+
+        <div class="inputs">
+
+        
+            <mat-form-field class="full-width" >
+                <mat-label>Nome</mat-label>
+                <input 
+                  [(ngModel)]="tecnico.nome"  
+                  name="nome"                  
+                  matInput 
+                  [disabled]="true">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width" disabled>
+                <mat-label>Email</mat-label>
+                <input type="email" 
+                    [disabled]="true"
+                    [(ngModel)]="tecnico.email"
+                    name="email"
+                    matInput
+                    placeholder="Ex. Jonas@gmail.com">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <mat-label>CPF</mat-label>
+                <input type="text"
+                  [disabled]="true"
+                  [(ngModel)]="tecnico.cpf"
+                  name="cpf"
+                  mask="000.000.000-00"
+                  matInput>
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <mat-label>Senha</mat-label>
+                <input name="senha"
+                     [disabled]="true"
+                     matInput
+                     [(ngModel)]="tecnico.senha"
+                     [type]="hide ? 'password' : 'text'"
+                     placeholder="Ex. Jonas@gmail.com">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+            </mat-form-field>    
+              
+        </div>
+
+        <div class="buttons">
+
+            <button
+            class="button-cadastro"
+            mat-raised-button 
+            (click)="deletarTecnico()">
+            Excluir
+            </button>
+            
+            <button
+            class="button-cancelar"
+            color="warn"
+            routerLink="/tecnico-list"
+            mat-raised-button >Cancelar</button>
+
+        </div>
+    </form>
+</div>
+
