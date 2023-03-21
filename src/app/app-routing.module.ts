@@ -12,6 +12,7 @@ import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecn
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { ChamadosListComponent } from './components/chamado/chamados-list/chamados-list.component';
 
 const routes: Routes = [
 
@@ -36,7 +37,10 @@ const routes: Routes = [
       { path: "clientes",            component:ClienteListComponent   },
       { path: "clientes/update/:id", component:ClienteUpdateComponent },
       { path: "clientes/create",     component:ClienteCreateComponent },
-      { path: "clientes/delete/:id", component:ClienteDeleteComponent }
+      { path: "clientes/delete/:id", component:ClienteDeleteComponent },
+
+      /** ===== ROTAS RELACIONADA AO CLIENTE */
+      { path: "chamados",     component:ChamadosListComponent },
     ]
   }
 ];
