@@ -37,7 +37,7 @@ export class TecnicoCreateComponent implements OnInit {
   saveTecnico(): void{
     this.service.saveTecnico(this.tecnico).subscribe(()  => {
       this.toast.success('Técnico cadastrado', 'Cadastro')
-      this.router.navigate(["/tecnico-list"])
+      this.router.navigate(["tecnicos"])
   }, ex => {
        console.log(ex);
        if(ex.error.errors){

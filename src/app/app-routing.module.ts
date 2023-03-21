@@ -14,52 +14,29 @@ import { ClienteUpdateComponent } from './components/cliente/cliente-update/clie
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 
 const routes: Routes = [
-  {
-    path:"login",
-    component:LoginComponent
-  },
 
-  {
-    path:"",
+  { path:"login", component:LoginComponent },
+
+  { path:"",
     component: NavbarComponent,
     canActivate: [AuthGuard],
     children:[
-      {
-        path:"home",
-        component:HomeComponent
-      },
-      {
-        path:"tecnico-list",
-        component:TecnicoListComponent
-      },
-      {
-        path: "tecnico-create",
-        component:TecnicoCreateComponent
-      },
-      {
-        path: "tecnico-update/:id",
-        component:TecnicoUpdateComponent
-      },
-      {
-        path: "tecnico-delete/:id",
-        component:TecnicoDeleteComponent
-      },
-      {
-        path:"clientes",
-        component:ClienteListComponent
-      },
-      {
-        path:"update/:id",
-        component:ClienteUpdateComponent
-      },
-      {
-        path:"create",
-        component:ClienteCreateComponent
-      },
-      {
-        path:"delete/:id",
-        component:ClienteDeleteComponent
-      }
+
+      { path:"home", component:HomeComponent },
+
+      /** ===== ROTAS RELACIONADA AO TECNICO */
+      
+      { path: "tecnicos",             component:TecnicoListComponent   },
+      { path: "tecnicos/create",      component:TecnicoCreateComponent },
+      { path: "tecnicos/update/:id",  component:TecnicoUpdateComponent },
+      { path: "tecnicos/delete/:id",  component:TecnicoDeleteComponent },
+
+      /** ===== ROTAS RELACIONADA AO CLIENTE */
+
+      { path: "clientes",            component:ClienteListComponent   },
+      { path: "clientes/update/:id", component:ClienteUpdateComponent },
+      { path: "clientes/create",     component:ClienteCreateComponent },
+      { path: "clientes/delete/:id", component:ClienteDeleteComponent }
     ]
   }
 ];
