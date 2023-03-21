@@ -1,0 +1,80 @@
+<div class="container mat-elevation-z8">
+    
+    <form class="form">
+        <h1>Atualizar {{cliente.nome}}</h1>
+
+            <section class="example-section">
+                <mat-checkbox (click)="addPerfil(0)" class="example-margin">ADMIN</mat-checkbox>
+                <mat-checkbox (click)="addPerfil(1)" [checked]="true" class="example-margin">CLIENTE</mat-checkbox>
+                <mat-checkbox (click)="addPerfil(2)" class="example-margin">TÉCNICO</mat-checkbox>
+            </section>
+
+
+
+        <div class="inputs">
+
+        
+            <mat-form-field class="full-width">
+                <mat-label>Nome</mat-label>
+                <input type="text" 
+                  [(ngModel)]="cliente.nome"
+                  name="nome"
+                  [formControl]="nome"
+                  matInput 
+                  placeholder="Ex. Jonas">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" 
+                    [(ngModel)]="cliente.email"
+                    name="email"
+                    [formControl]="email"
+                    matInput
+                    placeholder="Ex. Jonas@gmail.com">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <mat-label>CPF</mat-label>
+                <input type="text"
+                  [(ngModel)]="cliente.cpf"
+                  name="cpf"
+                  [formControl]="cpf"
+                  mask="000.000.000-00"
+                  matInput>
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+                <mat-label>Senha</mat-label>
+                <input name="senha"
+                     matInput
+                     [(ngModel)]="cliente.senha"
+                     [formControl]="senha"
+                     [type]="hide ? 'password' : 'text'"
+                     placeholder="Ex. Jonas@gmail.com">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+            </mat-form-field>    
+              
+        </div>
+
+        <div class="buttons">
+
+            <button
+            class="button-cadastro"
+            mat-raised-button  
+            (click)="update()"           
+            >Atualizar</button>
+            
+            <button
+            class="button-cancelar"
+            color="warn"
+            routerLink="/clientes"
+            mat-raised-button >Cancelar</button>
+
+        </div>
+    </form>
+</div>
+
+

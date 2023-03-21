@@ -33,8 +33,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxMaskModule }  from 'ngx-mask';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
-import { ClienteComponent } from './components/cliente/cliente.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
+import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +49,10 @@ import { ClienteListComponent } from './components/cliente/cliente-list/cliente-
     TecnicoCreateComponent,
     TecnicoUpdateComponent,
     TecnicoDeleteComponent,
-    ClienteComponent,
-    ClienteListComponent
+    ClienteListComponent,
+    ClienteUpdateComponent,
+    ClienteDeleteComponent,
+    ClienteCreateComponent
   ],
   imports: [
     BrowserModule,
