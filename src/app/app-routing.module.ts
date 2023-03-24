@@ -13,6 +13,7 @@ import { ClienteListComponent } from './components/cliente/cliente-list/cliente-
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { ChamadosListComponent } from './components/chamado/chamados-list/chamados-list.component';
+import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
 
 const routes: Routes = [
 
@@ -40,7 +41,8 @@ const routes: Routes = [
       { path: "clientes/delete/:id", component:ClienteDeleteComponent },
 
       /** ===== ROTAS RELACIONADA AO CLIENTE */
-      { path: "chamados",     component:ChamadosListComponent },
+      { path: "chamados",            component:ChamadosListComponent  },
+      { path: "chamados/create",     component:ChamadoCreateComponent },
     ]
   }
 ];
