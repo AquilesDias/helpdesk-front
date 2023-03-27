@@ -3,14 +3,14 @@
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Titulo do Chamado</mat-label>
-            <input matInput >
+            <input matInput [formControl]="titulo">
         </mat-form-field>
     </form>    
       
     <div class="status-prioridade">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label> Selecione um status </mat-label>
-            <mat-select>
+            <mat-select [formControl]="status">
                 <mat-option value="0">ABERTO</mat-option>
                 <mat-option value="1">EM ANDAMENTO</mat-option>
                 <mat-option value="2">ENCERRADO</mat-option>
@@ -19,7 +19,7 @@
         
         <mat-form-field class="full-width" appearance="outline">
             <mat-label> Selecione uma prioridade </mat-label>
-            <mat-select>
+            <mat-select [formControl]="prioridade">
                 <mat-option value="0">BAIXA</mat-option>
                 <mat-option value="1">MÉDIA</mat-option>
                 <mat-option value="2">ALTA</mat-option>
@@ -30,7 +30,7 @@
     <div class="tecnico">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Técnico</mat-label>
-            <mat-select>
+            <mat-select [formControl]="tecnico">           
                 <mat-option value="0">Valdir</mat-option>
             </mat-select>
         </mat-form-field>
@@ -39,7 +39,7 @@
     <div class="cliente">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Cliente</mat-label>
-            <mat-select>
+            <mat-select [formControl]="cliente">
                 <mat-option value="valdir">Valdir</mat-option>
             </mat-select>
         </mat-form-field>
@@ -48,11 +48,12 @@
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Observação</mat-label>
-            <textarea class="descricao" matInput ></textarea>
+            <textarea class="descricao" matInput [formControl]="observacao"></textarea>
         </mat-form-field>
     </form>
 
-    <button class="full-width mat-elevation-z8" mat-raised-button style="background-color: blueviolet; color: white;">
+    <button class="full-width mat-elevation-z8"
+     mat-raised-button [disabled]="!validationFields()">    
         <i class="material-icons" style="color: white;">add_circle</i>
         Cadastrar
     </button>
