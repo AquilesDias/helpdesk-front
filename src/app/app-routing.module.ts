@@ -1,3 +1,4 @@
+import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { AuthGuard } from './auth/auth.guard';
@@ -43,6 +44,7 @@ const routes: Routes = [
       /** ===== ROTAS RELACIONADA AO CLIENTE */
       { path: "chamados",            component:ChamadosListComponent  },
       { path: "chamados/create",     component:ChamadoCreateComponent },
+      { path: "chamados/update",     component:ChamadoUpdateComponent },
     ]
   }
 ];
