@@ -3,14 +3,18 @@
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Titulo do Chamado</mat-label>
-            <input matInput [formControl]="titulo">
+            <input matInput 
+                [formControl]="titulo" 
+                [(ngModel)]="chamado.titulo">
         </mat-form-field>
     </form>    
       
     <div class="status-prioridade">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label> Selecione um status </mat-label>
-            <mat-select [formControl]="status">
+            <mat-select
+                [(ngModel)]="chamado.status"
+                [formControl]="status">
                 <mat-option value="0">ABERTO</mat-option>
                 <mat-option value="1">EM ANDAMENTO</mat-option>
                 <mat-option value="2">ENCERRADO</mat-option>
@@ -19,7 +23,7 @@
         
         <mat-form-field class="full-width" appearance="outline">
             <mat-label> Selecione uma prioridade </mat-label>
-            <mat-select [formControl]="prioridade">
+            <mat-select [formControl]="prioridade" [(ngModel)]="chamado.prioridade">
                 <mat-option value="0">BAIXA</mat-option>
                 <mat-option value="1">MÉDIA</mat-option>
                 <mat-option value="2">ALTA</mat-option>
@@ -30,8 +34,12 @@
     <div class="tecnico">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Técnico</mat-label>
-            <mat-select [formControl]="tecnico">           
-                <mat-option value="0">Valdir</mat-option>
+            <mat-select [formControl]="tecnico"
+              [(ngModel)]="chamado.tecnico">           
+                <mat-option *ngFor="let tec of tecnicos" 
+                    value="{{ tec.id }}">
+                    {{tec.nome}}
+                </mat-option>
             </mat-select>
         </mat-form-field>
     </div>
@@ -39,8 +47,12 @@
     <div class="cliente">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Cliente</mat-label>
-            <mat-select [formControl]="cliente">
-                <mat-option value="valdir">Valdir</mat-option>
+            <mat-select [formControl]="cliente" [(ngModel)]="chamado.cliente">
+                <mat-option 
+                    *ngFor="let cliente of clientes" 
+                    value="{{cliente.id}}">
+                    {{cliente.nome}}
+                </mat-option>
             </mat-select>
         </mat-form-field>
     </div>
@@ -48,12 +60,18 @@
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Observação</mat-label>
-            <textarea class="descricao" matInput [formControl]="observacao"></textarea>
+            <textarea class="descricao"
+                matInput [(ngModel)]="chamado.observacoes"
+                [formControl]="observacao" >
+            </textarea>
         </mat-form-field>
     </form>
 
     <button class="full-width mat-elevation-z8"
-     mat-raised-button [disabled]="!validationFields()">    
+        mat-raised-button 
+        (click)="save()"
+        [disabled]="!validationFields()">    
+        
         <i class="material-icons" style="color: white;">add_circle</i>
         Cadastrar
     </button>
