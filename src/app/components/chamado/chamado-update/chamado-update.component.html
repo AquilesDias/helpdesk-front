@@ -1,1 +1,89 @@
-<p>chamado-update works!</p>
+<div class="container mat-elevation-z8">
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Titulo do Chamado</mat-label>
+            <input matInput 
+                name="titulo"
+                [formControl]="titulo" 
+                [(ngModel)]="chamado.titulo">
+        </mat-form-field>
+    </form>    
+      
+    <div class="status-prioridade">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label> {{returnStatus(chamado.status)}} </mat-label>
+            <mat-select
+                name="status"
+                
+                [(ngModel)]="chamado.status"
+                [formControl]="status">
+                <mat-option value="0">ABERTO</mat-option>
+                <mat-option value="1">EM ANDAMENTO</mat-option>
+                <mat-option value="2">ENCERRADO</mat-option>
+              </mat-select>
+        </mat-form-field> 
+        
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label> {{returnPrioridade(chamado.prioridade)}} </mat-label>
+            <mat-select name="prioridade"
+               
+               [formControl]="prioridade"
+               [(ngModel)]="chamado.prioridade">
+                <mat-option value="0">BAIXA</mat-option>
+                <mat-option value="1">MÉDIA</mat-option>
+                <mat-option value="2">ALTA</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="tecnico">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>{{chamado.nomeTecnico}}</mat-label>
+            <mat-select 
+              name="tecnico"  
+              [formControl]="tecnico"
+              [(ngModel)]="chamado.tecnico">           
+                <mat-option *ngFor="let tec of tecnicos" 
+                    value="{{ tec.id }}">
+                    {{tec.nome}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    
+    <div class="cliente">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>{{chamado.nomeCliente}}</mat-label>
+            <mat-select name="cliente"
+              [formControl]="cliente" 
+              [(ngModel)]="chamado.cliente">
+                <mat-option 
+                    *ngFor="let cliente of clientes" 
+                    value="{{cliente.id}}">
+                    {{cliente.nome}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Observação</mat-label>
+            <textarea class="descricao" name="observacao"
+                matInput [(ngModel)]="chamado.observacoes"
+                [formControl]="observacao" >
+            </textarea>
+        </mat-form-field>
+    </form>
+
+    <button class="full-width mat-elevation-z8"
+        mat-raised-button (click)="update()"> 
+        Cadastrar
+    </button>
+    
+    <button class="full-width mat-elevation-z8" mat-raised-button color="warn">        
+        Cancelar
+    </button>
+</div>
+

@@ -44,7 +44,7 @@ const routes: Routes = [
       /** ===== ROTAS RELACIONADA AO CLIENTE */
       { path: "chamados",            component:ChamadosListComponent  },
       { path: "chamados/create",     component:ChamadoCreateComponent },
-      { path: "chamados/update",     component:ChamadoUpdateComponent },
+      { path: "chamados/update/:id",     component:ChamadoUpdateComponent },
     ]
   }
 ];
