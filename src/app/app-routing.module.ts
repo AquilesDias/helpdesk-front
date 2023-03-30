@@ -46,7 +46,7 @@ const routes: Routes = [
       { path: "chamados",                component:ChamadosListComponent  },
       { path: "chamados/create",         component:ChamadoCreateComponent },
       { path: "chamados/update/:id",     component:ChamadoUpdateComponent },
-      { path: "chamados/read",       component:ChamadoReadComponent   },
+      { path: "chamados/read/:id",       component:ChamadoReadComponent   },
     ]
   }
 ];
